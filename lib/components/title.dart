@@ -9,12 +9,12 @@ class DestinationTitleContent extends StatelessWidget {
   final bool isOverflow;
 
   const DestinationTitleContent({
-    Key key,
-    this.text,
-    this.fontSize,
-    this.maxLines,
-    this.overflow,
-    this.isOverflow,
+    Key? key,
+    required this.text,
+    required this.fontSize,
+    required this.maxLines,
+    required this.overflow,
+    required this.isOverflow,
   }) : super(key: key);
 
   Widget _buildTitleText() => Text(
@@ -55,9 +55,9 @@ class DestinationTitle extends StatefulWidget {
   final bool isOverflow;
 
   const DestinationTitle({
-    Key key,
-    @required this.title,
-    @required this.viewState,
+    Key? key,
+    required this.title,
+    required this.viewState,
     this.smallFontSize = 15.0,
     this.largeFontSize = 48.0,
     this.maxLines = 2,
@@ -71,10 +71,10 @@ class DestinationTitle extends StatefulWidget {
 
 class _DestinationTitleState extends State<DestinationTitle>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _fontSizeTween;
+  late AnimationController _animationController;
+  late Animation<double> _fontSizeTween;
 
-  double fontSize;
+  late double fontSize;
 
   @override
   void initState() {

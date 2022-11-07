@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_heritage/components/box_icon_button.dart';
 import 'package:flutter_heritage/components/header.dart';
@@ -14,9 +12,9 @@ class DetailPage extends StatefulWidget {
   final int selectedIndex;
 
   const DetailPage({
-    Key key,
-    this.destinationList,
-    this.selectedIndex,
+    Key? key,
+    required this.destinationList,
+    required this.selectedIndex,
   }) : super(key: key);
 
   @override
@@ -27,12 +25,12 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   int currentIndex = 0;
   int offstageIndex = 0;
   SlideDirection slideDirection = SlideDirection.none;
-  ValueNotifier<SlideDirection> slideNotifier;
+  late ValueNotifier<SlideDirection> slideNotifier;
 
-  AnimationController _slideLeftAnimation;
-  Animation<Offset> heroSlide;
-  Animation<Offset> offstageSlide;
-  double contentSpacing;
+  late AnimationController _slideLeftAnimation;
+  late Animation<Offset> heroSlide;
+  late Animation<Offset> offstageSlide;
+  late double contentSpacing;
 
   @override
   void initState() {
@@ -258,8 +256,8 @@ class DetailContent extends StatelessWidget {
   final DestinationModel destination;
 
   const DetailContent({
-    Key key,
-    @required this.destination,
+    Key? key,
+    required this.destination,
     this.isHero = false,
     this.dx = 0.0,
     this.initialDx = 0.0,
@@ -276,7 +274,7 @@ class DetailContent extends StatelessWidget {
             maxHeight: 380.0,
           ),
           child: Stack(
-            overflow: Overflow.visible,
+            clipBehavior: Clip.none,
             children: <Widget>[
               Align(
                 alignment: Alignment.topCenter,

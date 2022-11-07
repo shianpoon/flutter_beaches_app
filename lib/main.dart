@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_heritage/components/header.dart';
 import 'package:flutter_heritage/data/destination_model.dart';
-import 'package:flutter_heritage/view_state.dart';
 import 'package:flutter_heritage/destination_banner.dart';
 import 'package:flutter_heritage/detail_page.dart';
 import 'package:flutter_heritage/fade_page_route.dart';
+import 'package:flutter_heritage/view_state.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,9 +30,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
   bool returnFromDetailPage = false;
-  ValueNotifier<bool> stateNotifier;
+  late ValueNotifier<bool> stateNotifier;
 
   @override
   void initState() {

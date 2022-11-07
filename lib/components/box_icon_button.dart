@@ -8,9 +8,9 @@ class BoxIconButton extends StatelessWidget {
   final double buttonSize;
 
   const BoxIconButton({
-    Key key,
-    @required this.onPressed,
-    @required this.icon,
+    Key? key,
+    required this.onPressed,
+    required this.icon,
     this.iconColor = Colors.white,
     this.buttonColor = Colors.black,
     this.buttonSize = 60.0,
@@ -21,10 +21,12 @@ class BoxIconButton extends StatelessWidget {
     return Container(
       width: buttonSize,
       height: buttonSize,
-      child: FlatButton(
-        shape: BeveledRectangleBorder(),
-        splashColor: Colors.white24,
-        color: buttonColor,
+      child: TextButton(
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(BeveledRectangleBorder()),
+          overlayColor: MaterialStateProperty.all(Colors.white24),
+          backgroundColor: MaterialStateProperty.all(buttonColor),
+        ),
         onPressed: onPressed,
         child: Icon(
           icon,

@@ -9,9 +9,9 @@ class DestinationBanner extends StatelessWidget {
   final Function(DestinationModel) onSelected;
 
   const DestinationBanner({
-    Key key,
-    this.destination,
-    this.onSelected,
+    Key? key,
+    required this.destination,
+    required this.onSelected,
   }) : super(key: key);
 
   @override
@@ -32,9 +32,7 @@ class DestinationBanner extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                      if (onSelected != null) {
-                        onSelected(destination);
-                      }
+                      onSelected(destination);
                     },
                     child: Hero(
                       tag: '${destination.id}-img',

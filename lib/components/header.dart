@@ -7,10 +7,10 @@ class HeaderContent extends StatelessWidget {
   final double textPadding;
 
   const HeaderContent({
-    Key key,
-    this.iconSize,
-    this.fontSize,
-    this.textPadding,
+    Key? key,
+    required this.iconSize,
+    required this.fontSize,
+    required this.textPadding,
   }) : super(key: key);
 
   @override
@@ -65,8 +65,8 @@ class Header extends StatefulWidget {
   final double largeIconSize;
 
   const Header({
-    Key key,
-    this.viewState,
+    Key? key,
+    required this.viewState,
     this.smallFontSize = 20.0,
     this.largeFontSize = 32.0,
     this.smallIconSize = 24.0,
@@ -78,14 +78,14 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _fontSizeTween;
-  Animation<double> _iconSizeTween;
-  Animation<double> _paddingSizeTween;
+  late AnimationController _animationController;
+  late Animation<double> _fontSizeTween;
+  late Animation<double> _iconSizeTween;
+  late Animation<double> _paddingSizeTween;
 
-  double fontSize;
-  double iconSize;
-  double paddingSize;
+  late double fontSize;
+  late double iconSize;
+  late double paddingSize;
 
   @override
   void initState() {
