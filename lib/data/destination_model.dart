@@ -7,10 +7,10 @@ class DestinationModel {
   final List<String> imgAssetsPath;
 
   DestinationModel({
-    this.id,
-    this.title,
-    this.description,
-    this.imgAssetsPath,
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.imgAssetsPath,
   });
 }
 
